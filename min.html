@@ -1,0 +1,28 @@
+<b id="el" style="position: absolute">el</b>
+
+<script>
+
+x = 500,  y = 500,  vx = 0,  vy = 0
+
+animate()
+
+onkeydown = function (e) {
+  if (e.key == 'ArrowUp')    vx = 0,  vy = -1
+  if (e.key == 'ArrowDown')  vx = 0,  vy = 1
+  if (e.key == 'ArrowRight') vx = 1,  vy = 0
+  if (e.key == 'ArrowLeft')  vx = -1, vy = 0
+}
+
+function move() {  x += vx,  y += vy  }
+
+function show() {
+  el.style.left = x + 'px'
+  el.style.top  = y + 'px'
+}
+
+function animate() {
+  move(),  show()
+  requestAnimationFrame(animate)
+}
+
+</script>
